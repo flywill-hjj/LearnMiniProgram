@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/wxml/wxml",
+    "pages/wxss/wxss",
     "pages/home/home",
     "pages/about/about"
-  ]
+  ],
+  "sitemapLocation": "sitemap33.json"
 }
