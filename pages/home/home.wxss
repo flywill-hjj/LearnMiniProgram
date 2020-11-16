@@ -1,5 +1,46 @@
 /* pages/home/home.wxss */
-.title{
+.title {
   color: red;
   font-size: 30px;
+}
+
+.box {
+  width: 300rpx;
+  height: 300rpx;
+  background: orange;
+}
+
+.box1 {
+  width: 150px;
+  height: 150px;
+  background: blue;
+}
+
+.outer {
+  width: 400rpx;
+  height: 400rpx;
+  background: red;
+  color: #ffffff;
+}
+
+.inner {
+  width: 200rpx;
+  height: 200rpx;
+  background: green;
+  color: #ffffff;
+}
+
+.box2 {
+  width: 600rpx;
+  height: 600rpx;
+  background: black;
+}
+
+.container {
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
 }
