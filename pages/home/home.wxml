@@ -1,3 +1,63 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World</text>
-<button size="mini">按钮</button>
+<button>按钮</button>
+
+<!-- -------条件判断---------- -->
+<!-- wx:if的使用 -->
+<button size="mini" bindtap="handleSwitchShow">切换显示</button>
+<view wx:if="{{ isShow }}">哈哈哈</view>
+
+<!-- wx:elif/wx:else -->
+<button size="mini" bindtap="handleIncrenment">分数递增</button>
+<view wx:if="{{ score >= 90 }}">优秀</view>
+<view wx:elif="{{ score >= 80 }}">良好</view>
+<view wx:elif="{{ score >= 60 }}">及格</view>
+<view wx:else>不及格</view>
+
+<!-- hidden属性 -->
+<view hidden>我是hidden属性控制的内容</view>
+
+<!-- wx:if和hidden在隐藏组件时有什么区别 -->
+<!-- 
+  hidden:将一个组件隐藏起来时，该组件依然存在（display：none）
+  wx:if：将一个组件隐藏起来时，该组件根本不存在（压根没有创建）
+  如果我们的显示和隐藏切换的频率非常高，选择使用hidden
+  如果我们的显示和隐藏切换的频率非常低，那么选择wx:if
+ -->
+<view hidden="{{ true }}">我是通过hidden控制的内容</view>
+<view wx:if="{{ false }}">我是wx:if控制的内容</view>
+
+<view>-----------列表渲染------------</view>
+<!-- 1wx:for的回顾 -->
+<!-- 1.1.遍历数组/字符/数字 -->
+<!-- <view wx:for="{{ [10,02,30,20,40,50] }}">{{ item + ' ' +index }}</view>
+<view wx:for="flywill">{{ item + ' ' + index }}</view>
+<view wx:for="{{ 9 }}">{{ item }}</view> -->
+
+<!-- block并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性
+  好处：
+  将需要进行遍历或者判断的内容进行包裹
+  将遍历和判断的属性放在block标签中，不影响普通属性的阅读，提高代码的可读性。
+-->
+<block>ww</block>
+<!-- 3.item、index起名字 -->
+<!-- <view wx:for="{{ movies }}" wx:for-item="movie" wx:for-index="i">{{ movie + '' + i }}</view> -->
+
+<!-- 4.key的作用 高效的更新虚拟DOM-->
+
+<!-- <view wx:for="{{ ['a','b','c'] }}" wx:key="index">{{ item }}</view> -->
+
+<view>--------template----------</view>
+<!-- 
+  之前时候小程序不支持自定义组件，为了进行代码的复用：template
+ -->
+<!-- 模板中包裹的内容，在没有被使用前，是不会进行任何的渲染的 -->
+<!-- <template name="contentItem">
+  <button size="mini">{{ btnText }}</button>
+  <view>{{ content }}</view>
+</template> -->
+<import src="/wxml/template.wxml" />
+
+<template is="contentItem" data="{{ btnText:'按钮',content:'我是小程序' }}" />
+<template is="contentItem" data="{{ btnText:'警告',content:'呵呵呵' }}" />
+<template is="contentItem" data="{{ btnText:'点击',content:'嘿嘿嘿' }}" />
