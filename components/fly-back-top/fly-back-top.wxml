@@ -1,0 +1,4 @@
+<!--components/fly-back-top/fly-back-top.wxml-->
+<view class="back-top" bindtap="handleBackTop">
+  <image class="image" src="/assets/common/top.png" />
+</view>
