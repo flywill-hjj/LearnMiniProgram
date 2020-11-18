@@ -1,3 +1,21 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
+
+<!-- 1.展示轮播图 -->
+<fly-swiper list="{{ banners }}" />
+
+<!-- 2.推荐数据的展示 -->
+<fly-recommend recommends="{{ recommends }}" bind:imageload="handleImageLoad" />
+
+<!-- 3.展示本周流行 -->
+<fly-popular />
+
+<!-- 4.tab-control -->
+<fly-tab-control titles="{{ titles }}" bind:tabClick="handleTabClick" class="{{ isTabFixed?'fixed':'' }}" id="tab-control" />
+<fly-tab-control titles="{{ titles }}" wx:if="{{ isTabFixed }}"/>
+
+<!-- 5.展示商品数据 -->
+<fly-goods goods="{{ goods[currentType].list }}" />
+
+<!-- 6.回到顶部 -->
+<!-- hidden:hidden对于自定义的组件是无效的 -->
+<fly-back-top wx:if="{{ showBackTop }}" />

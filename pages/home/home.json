@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "fly-swiper":"/components/fly-swiper/fly-swiper",
+    "fly-tab-control":"/components/fly-tab-control/fly-tab-control",
+    "fly-goods":"/components/fly-goods/fly-goods",
+    "fly-back-top":"/components/fly-back-top/fly-back-top",
+    "fly-recommend":"/pages/home/childCpns/fly-recommend/fly-recommend",
+    "fly-popular":"/pages/home/childCpns/fly-popular/fly-popular"
+  },
+  "navigationBarTitleText": "购物街"
 }

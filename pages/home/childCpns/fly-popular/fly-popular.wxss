@@ -1,0 +1,4 @@
+/* pages/home/childCpns/fly-popular/fly-popular.wxss */
+.popular .image{
+  width: 100%;
+}
